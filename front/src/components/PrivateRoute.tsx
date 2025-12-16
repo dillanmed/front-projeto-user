@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import React from 'react'; // Importar React, embora não seja estritamente necessário em novas versões, é uma boa prática.
+import React from 'react'; 
 
 /**
  * Interface para as propriedades do componente PrivateRoute.
@@ -19,13 +19,9 @@ interface PrivateRouteProps {
 export default function PrivateRoute({ children }: PrivateRouteProps): React.ReactElement {
   
   const token = localStorage.getItem("token");
-
-  
   if (!token) {
-    
-    return <Navigate to="/login" replace />; 
-    
+    return <Navigate to="/login" replace />;  
   }
-
+  
   return children;
 }

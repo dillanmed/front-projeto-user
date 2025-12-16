@@ -17,11 +17,15 @@ export default function Dashboard() {
 
   return (
     <div style={{ padding: 20 }}>
-      <h1>Bem-vindo, {user?.name || "Usuário"}</h1>
+      <div className="page-container">
+      <h1>Bem-vindo, {user?.name}</h1>
 
+      <div className="button-group">
+        <button className="primary" onClick={() => navigate("/users")}>Gerenciar Usuários</button>
+        <button  className= "secondary" onClick={() => navigate("/users/new")}>Cadastrar Usuário</button>
+      </div>
+      </div>
       
-      <button onClick={() => navigate("/users")}>Gerenciar Usuários</button>
-      <button onClick={() => navigate("/users/new")}>Cadastrar Usuário</button>
     </div>
   );
 }

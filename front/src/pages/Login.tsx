@@ -8,24 +8,33 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   async function handleLogin(e: React.FormEvent) {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      const res = await api.post("/auth/login", { email, password });
+  try {
+    // 1. LOGIN: Obter apenas o TOKEN
+    const resLogin = await api.post("/auth/login", { email, password });
+    const token = resLogin.data.token;
+    
+    // 2. SALVAR TOKEN
+    localStorage.setItem("token", token);
+    
+    // 3. BUSCAR DADOS DO USUÁRIO USANDO O TOKEN
+    // Agora, o `api` usará o token salvo para esta requisição `/me`
+    const resMe = await api.get("/users/me"); 
+    const user = resMe.data; // A resposta de /me é o objeto user
 
-      // SALVAR TOKEN
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("userId", String(res.data.user.id));
-      localStorage.setItem("user", JSON.stringify(res.data.user));
+    // 4. SALVAR ID E DADOS COMPLETOS
+    localStorage.setItem("userId", String(user.id));
+    localStorage.setItem("user", JSON.stringify(user));
 
-
-      navigate("/dashboard");
-    } catch (err) {
-      alert("Erro ao fazer login");
-    }
+    navigate("/dashboard");
+  } catch (err) {
+    alert("Erro ao fazer login ou carregar dados do usuário.");
   }
+}
 
-  return (
+   return (
+    <div className="container-principal">
     <form className="login-form" onSubmit={handleLogin}>
       <h2>Login</h2>
 
@@ -43,5 +52,6 @@ export default function Login() {
 
       <button id="login" type="submit">Entrar</button>
     </form>
+    </div>
   );
 }

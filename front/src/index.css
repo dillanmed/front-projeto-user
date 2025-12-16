@@ -5,20 +5,269 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #eeeeee;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #639dcf;
+  
 }
+
+input{
+  background-color: rgb(255, 255, 255);
+}
+
+.login-form{
+   background-color: white;
+    padding: 40px;
+    border-radius: 10px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
+    width: 100%; 
+    max-width: 380px; 
+    text-align: center; 
+}
+.login-form h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #363636;
+}
+.login-form input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+}
+.login-form input:focus {
+    border-color: #59d1df; 
+    outline: none; 
+}
+.login-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease; 
+}
+.login-form button:hover {
+    background-color: #0056b3; 
+}
+
+.page-container{
+  background-color: white;
+    padding: 40px 60px; /* Padding generoso */
+    border-radius: 10px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar */
+    width: 100%;
+    max-width: 500px; /* Limita a largura do bloco */
+    text-align: center; /* Centraliza o título h1 */
+}
+.page-container h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 30px; /* Espaçamento entre o título e os botões */
+}
+.cadastro-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
+    width: 100%; 
+    max-width: 400px; /* Ligeiramente mais largo que o Login (380px) */
+    text-align: center; /* Centraliza o título e outros elementos */
+}
+.cadastro-container h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #000000;
+}
+.cadastro-form input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px; /* Espaço uniforme entre os campos */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    font-size: 16px;
+    background-color: #ffffff;
+    color: black;
+    
+    
+}
+.cadastro-form input:focus {
+    border-color: #59d1df; 
+    outline: none;
+}
+.cadastro-form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff; /* Azul primário, diferente do Login (Preto) */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+    color: white;
+}
+
+.cadastro-form button[type="submit"]:hover {
+    background-color: #0056b3; 
+}
+
+.user-list-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
+    width: 100%; 
+    max-width: 800px; /* Largura maior para acomodar a tabela */
+}
+.user-list-container h1 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #333;
+    text-align: center; /* Centraliza o título */
+}
+.user-table {
+    width: 100%; /* Ocupa toda a largura do bloco branco */
+    border-collapse: collapse; /* Remove espaçamento duplo das bordas */
+    table-layout: fixed; /* Ajuda a manter a largura das colunas consistente */
+}
+.user-table thead th {
+    background-color: #f8f9fa; /* Fundo cinza claro para o cabeçalho */
+    color: #333;
+    font-weight: 600;
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+}
+.user-table thead th:last-child {
+    text-align: center; /* Centraliza o texto "Ações" */
+}
+.user-table tbody tr {
+    border-bottom: 1px solid #eee; /* Linhas divisórias leves */
+    transition: background-color 0.2s;
+}
+
+.user-table tbody tr:hover {
+    background-color: #f0f0f0; /* Efeito hover suave */
+}
+
+.user-table tbody td {
+    padding: 12px 10px;
+    color: #555;
+    text-align: left;
+    vertical-align: middle;
+}
+.user-table tbody td:last-child {
+    /* Centraliza o conteúdo da célula (a span com os botões) */
+    text-align: center; 
+    vertical-align: middle;
+}
+
+/* Alinhamento da Coluna de Ações */
+.user-table tbody td:last-child {
+    text-align: center;
+}
+.user-table .actions-span {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Link EDITAR */
+.user-table a {
+    color: #007bff; /* Azul primário */
+    text-decoration: none; /* Remove sublinhado padrão */
+    font-size: 1em;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.user-table a:hover {
+    color: #0056b3;
+}
+.user-table button {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: #dc3545; /* Vermelho padrão para ações perigosas */
+    font-size: 1em;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.user-table button:hover {
+    color: #a71d2a;
+}
+.edicao-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
+    width: 100%; 
+    max-width: 400px; /* Mantém a mesma largura do Cadastro */
+    text-align: center; /* Centraliza o título */
+}
+.edicao-container h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+}
+.edicao-form input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px; /* Espaço uniforme entre os campos */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    font-size: 16px;
+    color: #333; /* Texto digitado preto */
+}
+.edicao-form input:focus {
+    border-color: #59d1df; 
+    outline: none;
+}
+
+.edicao-form input::placeholder {
+    color: #555; 
+}
+.edicao-form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff; /* Azul primário, ideal para "Salvar/Atualizar" */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.edicao-form button[type="submit"]:hover {
+    background-color: #0056b3; 
+}
+
+
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #649aff;
   text-decoration: inherit;
 }
 a:hover {
@@ -45,23 +294,52 @@ h2 {
   text-align: center;
   
 }
-
+.button-group {
+    display: flex; /* Habilita o Flexbox para alinhar os botões */
+    justify-content: center; /* Centraliza o grupo de botões horizontalmente */
+    gap: 20px; /* Espaçamento entre os botões */
+    margin-top: 20px;
+}
+.button-group button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
 
 button {
+  padding: 12px 22px;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  justify-content: center;
-  display: flex;
   cursor: pointer;
-  transition: border-color 0.25s;
-  
-  
+  border: none;
+  transition: all 0.3s ease;
+}
+button:first-child {
+  margin-right: 60px;
+}
+
+.button-group .primary {
+    background-color: #007bff; /* Azul vibrante */
+    color: white;
+}
+button.primary:hover {
+  background-color: #324353;
+}
+
+
+.button-group .secondary {
+    background-color: #007bff;/* Cinza suave */
+    color: white;
+}
+
+button.secondary:hover {
+  background-color: #324353;
 }
 .login-form {
   display: flex;

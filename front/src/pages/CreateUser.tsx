@@ -26,10 +26,11 @@ export default function CreateUser() {
   }
 
   return (
-    <div style={{ padding: 20 }}>
+    <div className="container-principal">
+    <div className="cadastro-container">
       <h1>Criar Usuário</h1>
 
-      <form onSubmit={handleCreate}>
+      <form className="cadastro-form" onSubmit={handleCreate}>
         <input 
           type="text" 
           placeholder="Nome" 
@@ -53,6 +54,7 @@ export default function CreateUser() {
 
         <button type="submit">Salvar</button>
       </form>
+    </div>
     </div>
   );
 }

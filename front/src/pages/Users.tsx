@@ -88,7 +88,7 @@ export default function Users() {
       return null;
     }
     return (
-      <span style={{ display: "flex", gap: 8 }}>
+      <span className="actions-span" style={{ display: "flex", gap: 8 }}>
         <Link to="/users/me/edit">
           EDITAR
         </Link>
@@ -110,9 +110,10 @@ export default function Users() {
   };
 
   return (
-    <div style={{ padding: 20 }}>
+    <div className="container-principal">
+      <div className="user-list-container">
       <h1>Usuários</h1>
-      <table>
+      <table className="user-table">
         <thead>
           <tr>
             <th>Nome</th>
@@ -131,6 +132,8 @@ export default function Users() {
         </tbody>
           
       </table>
-    </div>
+      </div>
+      </div>
+    
   );
 }

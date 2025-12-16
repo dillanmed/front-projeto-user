@@ -78,10 +78,11 @@ export default function EditUser() {
   if (isLoading) return <p>Carregando...</p>; // Usa o novo estado
 
   return (
-    <div style={{ padding: 20 }}>
+    <div className="container=principal">
+      <div className="edicao-container">
       <h1>Editar Usuário</h1>
 
-      <form onSubmit={handleUpdate}>
+      <form className="edicao-form" onSubmit={handleUpdate}>
         <input 
           type="text" 
           name="name" // 🔑 Adiciona a propriedade 'name'
@@ -98,6 +99,7 @@ export default function EditUser() {
 
         <button type="submit">Atualizar</button>
       </form>
+    </div>
     </div>
   );
 }
